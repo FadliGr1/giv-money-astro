@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Card from "../components/Card.astro";
+import Advantages from "../components/Advantages.astro";
+import * as Icon from "@astropub/icons";
+---
+
+<Layout title="Giv Money Finance">
+  <main>
+    <Navbar
+      title={[
+        {title: "Features", link: "/"},
+        {title: "Resources", link: "/resources"},
+        {title: "Contact US", link: "/contact"},
+        {title: "Career", link: "/career"},
+      ]}
+    />
+    <section>
+      <div class="container">
+        <div class="row d-flex align-items-center mt-lg-0 mt-3">
+          <div class="col-lg-6 col-12">
+            <h1 class="fw-bold title">Simplifying Global <span class="title-span"> Finance</span></h1>
+            <p class="fw-normal text-black-50">Faster, easier and cheaper cross border payment starts here</p>
+            <div class="row mt-5 mb-lg-0 mb-3">
+              <div class="col-6 d-flex align-items-center">
+                <Icon.Check size="22" fill="green" />
+                <p class="fw-normal text-black-50 mb-0 ms-2">Licensed & Regulated</p>
+              </div>
+              <div class="col-6 d-flex align-items-center">
+                <Icon.Check size="22" fill="green" />
+                <p class="fw-normal text-black-50 mb-0 ms-2">Hassle-free</p>
+              </div>
+              <div class="col-6 d-flex align-items-center">
+                <Icon.Check size="22" fill="green" />
+                <p class="fw-normal text-black-50 mb-0 ms-2">100% Transparent</p>
+              </div>
+              <div class="col-6 d-flex align-items-center">
+                <Icon.Check size="22" fill="green" />
+                <p class="fw-normal text-black-50 mb-0 ms-2">Across 180+ Countries</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center">
+            <Card />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid bg-light py-5 my-5">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-3 col-6">
+            <img src="/public/images/airbnb.png" alt="" class="img-fluid w-lg-50 w-75" />
+          </div>
+          <div class="col-lg-3 col-6">
+            <img src="/public/images/google.png" alt="" class="img-fluid w-lg-50 w-75" />
+          </div>
+          <div class="col-lg-3 col-6 mt-lg-0 mt-3">
+            <img src="/public/images/microsoft.png" alt="" class="img-fluid w-lg-50 w-75" />
+          </div>
+          <div class="col-lg-3 col-6 mt-lg-0 mt-3">
+            <img src="/public/images/slack.png" alt="" class="img-fluid w-lg-50 w-75" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="heading text-center fw-bold">
+              We Provide the Easiest Way to <br />
+              <span style="color: var(--primary-color)"> Manage Your Finances</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row mt-lg-5">
+          <Advantages
+            title={[
+              {title: "Great Trading", description: "We believe in the potential to provide groundbreaking solutions across industries.", image: "/public/svg/dollar-sign.svg", url: "/"},
+              {title: "Security First", description: "Security has been our top consideration because when choosing an exchange, trust matters.", image: "/public/svg/shield.svg", url: "/"},
+              {title: "Great Trading", description: "To enhance the safety aspect of our products, our products are developed using the latest robust technology.", image: "/public/svg/cpu.svg", url: "/"},
+            ]}
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

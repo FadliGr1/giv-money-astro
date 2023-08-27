@@ -1,0 +1,21 @@
+{
+  "name": "giv-money",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astropub/icons": "^0.2.0",
+    "@popperjs/core": "^2.11.8",
+    "@types/bootstrap": "^5.2.6",
+    "aos": "^2.3.4",
+    "astro": "^2.10.14",
+    "astro-bootstrap": "^0.6.1",
+    "bootstrap": "^5.3.1"
+  }
+}

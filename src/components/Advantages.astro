@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+  };
+}
+
+const {title} = Astro.props;
+---
+
+{
+  title.map((item) => (
+    <div class="col-lg-4 col-12 ">
+      <a href={item.url}>
+        <div class="card p-3 border-0">
+          <div class="card-image">
+            <img src={item.image} alt={item.title} height="26" />
+          </div>
+          <div class="card-content mt-4">
+            <h3 class="fw-bold fs-5 mb-0">{item.title}</h3>
+            <p class="fw-normal text-black-50 fs-6">{item.description}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  ))
+}
+
+<style>
+  .card {
+    position: relative;
+    height: 100%;
+    border-radius: 12px;
+    background: #fff !important;
+    /* box-shadow: -32px 48px 60px 0px rgba(22, 23, 28, 0.04); */
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    scale: 1.01;
+    transition-delay: 0.2s;
+    box-shadow: -32px 48px 60px 0px rgba(22, 23, 28, 0.1);
+  }
+</style>

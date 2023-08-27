@@ -1,0 +1,32 @@
+---
+import * as Icon from "@astropub/icons";
+interface Props {
+  title: {title: string; link: string}[];
+}
+
+const {title} = Astro.props;
+---
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container py-3">
+    <a class="navbar-brand fw-bold" href="/">Giv Money</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {
+          title.map((item) => (
+            <li class="nav-item">
+              <a class="nav-link mx-3" aria-current="page" href={item.link}>
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/login" class="text-white me-4 btn-login">Login</a>
+      <a href="/register" class="btn btn-signup d-flex align-items-center" type="submit">Sign up <Icon.ArrowRight size="20" class="ms-1" /></a>
+    </div>
+  </div>
+</nav>

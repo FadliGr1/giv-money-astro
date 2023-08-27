@@ -1,0 +1,26 @@
+@import url("navbar.css");
+@import url("var.css");
+
+.title {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 91px;
+  letter-spacing: 0.72px;
+}
+.title-span {
+  color: var(--primary-color);
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-image: none !important;
+  }
+  .title {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 61px;
+    letter-spacing: 0.48px;
+  }
+}

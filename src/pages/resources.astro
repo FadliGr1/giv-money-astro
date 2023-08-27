@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="Resources - Giv Money Finance">
+  <main>
+    <Navbar
+      title={[
+        {title: "Features", link: "/"},
+        {title: "Resources", link: "/resources"},
+        {title: "Contact US", link: "/contact"},
+        {title: "Career", link: "/career"},
+      ]}
+    />
+  </main>
+</Layout>

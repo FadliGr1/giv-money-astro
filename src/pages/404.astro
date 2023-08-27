@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
@@ -14,5 +13,20 @@ import Navbar from "../components/Navbar.astro";
         {title: "Career", link: "/career"},
       ]}
     />
+    <section>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col">
+            <h1 class="fw-bold text-center">Nothing.</h1>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .row {
+    min-height: 80vh;
+  }
+</style>

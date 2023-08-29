@@ -1,0 +1,56 @@
+---
+import {wpquery} from "../../data/wordpress";
+
+export async function getStaticPaths() {
+  const data = await wpquery({
+    query: `
+      query Post {
+        posts {
+          nodes {
+            title
+            slug
+            featuredImage {
+              node {
+                mediaItemUrl
+                srcSet
+                sizes
+                altText
+              }
+            }
+            content
+            author {
+              node {
+                name
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return data.data.posts.nodes.map((post: any) => {
+    return {
+      params: {slug: post.slug},
+      props: {post},
+    };
+  });
+}
+
+const {post} = Astro.props;
+console.log("post:", post);
+---
+
+<section>
+  <img src={post.featuredImage.node.mediaItemUrl} alt={post.featuredImage.node.alt} />
+
+  <h1>{post.title}</h1>
+
+  <p class="byline">Written by {post.author.node.name}</p>
+
+  <Fragment set:html={post.content} />
+
+  <p>
+    <a href="/blog/">&larr; back to all posts</a>
+  </p>
+</section>

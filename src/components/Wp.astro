@@ -1,0 +1,35 @@
+---
+import {wpquery} from "../data/wordpress";
+
+const data = await wpquery({
+  query: `
+    query LoadAllPostsExcerpts {
+      posts {
+        nodes {
+          title
+          slug
+          excerpt
+        }
+      }
+    }
+  `,
+});
+
+console.log("Post:", data);
+---
+
+<section>
+  <h1>Project</h1>
+  {
+    data.data.posts.nodes.map((post: any) => {
+      return (
+        <div>
+          <h2>
+            <a href={`/blog/${post.slug}`}>{post.title}</a>
+          </h2>
+          <Fragment set:html={post.excerpt} />
+        </div>
+      );
+    })
+  }
+</section>
